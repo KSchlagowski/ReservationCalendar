@@ -1,0 +1,18 @@
+<div class="alert-overlay">
+  <div class="alert-box">
+    <h2>{{ title }}</h2>
+    <p>{{ message }}</p>
+<!--    <label for="userInput">Enter something:</label>-->
+    <input id="userInput" [(ngModel)]="userInput" type="text" placeholder="Type here" />
+<!--    <input-->
+<!--      *ngIf="showInput"-->
+<!--      [(ngModel)]="userInput"-->
+<!--      type="text"-->
+<!--      placeholder="State your name for registration"-->
+<!--    />-->
+    <div class="alert-actions">
+      <button (click)="onCancel()">Cancel</button>
+      <button (click)="onConfirm()">Confirm</button>
+    </div>
+  </div>
+</div>
