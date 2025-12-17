@@ -2,6 +2,26 @@
 
 A restaurant table reservation calendar system. The application consists of a server-side backend built with **Node.js** and a client-side **Angular** frontend interface.
 
+## ✨ Key Features
+
+Based on project requirements, the system implements the following functionality:
+
+### 📅 Calendar Display
+*   **Clear Visualization:** Presents a transparent list of days, weeks, or months.
+*   **Switchable Views:** Users can toggle between Day, Week, and Month views.
+*   **Availability Status:** Clearly distinguishes between free and busy time slots.
+
+### 📝 Appointment Booking
+*   **Slot Selection:** Users can select a specific time slot to add it to the calendar.
+*   **Data Collection:** Captures essential details during booking (e.g., First Name, Last Name, Email).
+*   **Conflict Prevention:** The system validates slot availability before confirming any reservation.
+
+### ⚙️ Reservation Management
+*   **Admin Access:** Administrators can view the complete list of all reservations.
+*   **Modification:** Capability to edit or cancel existing reservations.
+*   **Notifications:** Automatic confirmation messages sent upon successful booking.
+
+
 ## 🚀 Technologies
 
 The project utilizes the following technology stack:
