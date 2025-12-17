@@ -4,7 +4,7 @@ A restaurant table reservation calendar system. The application consists of a se
 
 ## ✨ Key Features
 
-Based on project requirements, the system implements the following functionality:
+App implements the following functionality:
 
 ### 📅 Calendar Display
 *   **Clear Visualization:** Presents a transparent list of days, weeks, or months.
