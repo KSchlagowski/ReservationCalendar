@@ -4,23 +4,29 @@ A restaurant table reservation calendar system. The application consists of a se
 
 ## ✨ Key Features
 
-App implements the following functionality:
+The application implements the following functionality:
 
 ### 📅 Calendar Display
 *   **Clear Visualization:** Presents a transparent list of days, weeks, or months.
 *   **Switchable Views:** Users can toggle between Day, Week, and Month views.
 *   **Availability Status:** Clearly distinguishes between free and busy time slots.
+*   **Navigation:** Allows easy navigation to the previous/next month and returning to the current day.
 
 ### 📝 Appointment Booking
 *   **Slot Selection:** Users can select a specific time slot to add it to the calendar.
 *   **Data Collection:** Captures essential details during booking (e.g., First Name, Last Name, Email).
 *   **Conflict Prevention:** The system validates slot availability before confirming any reservation.
+*   **SMS Notifications:** Upon successful booking, an automatic SMS confirmation is sent to the user.
 
 ### ⚙️ Reservation Management
-*   **Admin Access:** Administrators can view the complete list of all reservations.
-*   **Modification:** Capability to edit or cancel existing reservations.
-*   **Notifications:** Automatic confirmation messages sent upon successful booking.
+*   **Real-Time Updates:** Once a reservation is made, the slot status updates instantly from "Free" to "Reserved".
+*   **Automatic Cleanup:** The system automatically cleans up old events upon application startup.
+*   **Mock Data:** When the backend starts, the database is populated with mock events to facilitate testing and demonstration.
 
+### 👥 Admin Functions
+*   **Full Access:** Administrators can view the complete list of all reservations.
+*   **Reservation Editing:** Capability to modify existing reservations, including changing client details. After editing, the new user receives an SMS notification.
+*   **Reservation Cancellation:** Administrators can cancel any reservation. The user whose reservation is cancelled is informed via an SMS notification.
 
 ## 🚀 Technologies
 
@@ -96,8 +102,3 @@ The user interface for managing the calendar.
 *   `/Frontend` – Client application source code (Angular).
     *   `/src/app` – Components and calendar view logic.
 
-## 📝 Project Status
-This is an academic project currently under development. The current version supports basic database interactions and calendar visualization.
-
-***
-**Authors:** [KSchlagowski](https://github.com/KSchlagowski), [AdamRudnickiUG](https://github.com/AdamRudnickiUG)
