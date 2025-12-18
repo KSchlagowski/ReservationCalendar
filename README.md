@@ -12,11 +12,15 @@ The application implements the following functionality:
 *   **Availability Status:** Clearly distinguishes between free and busy time slots.
 *   **Navigation:** Allows easy navigation to the previous/next month and returning to the current day.
 
+![Calendar View](Example1.jpg)
+
 ### 📝 Appointment Booking
 *   **Slot Selection:** Users can select a specific time slot to add it to the calendar.
 *   **Data Collection:** Captures essential details during booking (e.g., First Name, Last Name, Email).
 *   **Conflict Prevention:** The system validates slot availability before confirming any reservation.
 *   **SMS Notifications:** Upon successful booking, an automatic SMS confirmation is sent to the user.
+
+![Success Message](Example2.jpg)
 
 ### ⚙️ Reservation Management
 *   **Real-Time Updates:** Once a reservation is made, the slot status updates instantly from "Free" to "Reserved".
@@ -27,6 +31,8 @@ The application implements the following functionality:
 *   **Full Access:** Administrators can view the complete list of all reservations.
 *   **Reservation Editing:** Capability to modify existing reservations, including changing client details. After editing, the new user receives an SMS notification.
 *   **Reservation Cancellation:** Administrators can cancel any reservation. The user whose reservation is cancelled is informed via an SMS notification.
+
+![Management Interface](Example3.jpg)
 
 ## 🚀 Technologies
 
