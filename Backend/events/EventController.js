@@ -21,6 +21,7 @@ exports.getAllEvents = async (req, res) => {
     }
 };
 
+
 exports.updateEvent = async (req, res) => {
     //==============
     try {
@@ -54,6 +55,62 @@ exports.updateEvent = async (req, res) => {
     }
 }
 
+
+exports.editEvent = async (req, res) => {
+   
+    //==============
+    try {
+        const foundEvent = await Event.findByPk(req.body.Identifier);
+        if (foundEvent !== null) {
+                try{
+                    foundEvent.title = req.body.title;
+                    await foundEvent.save();
+                }
+                catch (e) {
+                    res.error('Error updating event' + e);
+                }
+
+                const events = await Event.findAll();
+                return res.json(events);
+        }
+        else
+            return res.error("updateEvent - No");
+    //==============
+    } catch
+        (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+}
+
+
+exports.deleteEvent = async (req, res) => {
+   
+    //==============
+    try {
+        const foundEvent = await Event.findByPk(req.body.Identifier);
+        if (foundEvent !== null) {
+                try{
+                    foundEvent.title = 'Wolne';
+                    console.error('testig');
+                    await foundEvent.save();
+                }
+                catch (e) {
+                    res.error('Error updating event' + e);
+                }
+
+                const events = await Event.findAll();
+                return res.json(events);
+        }
+        else
+            return res.error("updateEvent - No");
+    //==============
+    } catch
+        (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+}
 
 exports.createMockEvents = async (req, res) => {
     const events = await Event.findAll();

@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import {FormsModule} from "@angular/forms";
 import {RepositoryService} from '../services/repository.service';
 
+
 @Component({
   selector: 'app-custom-alert',
   standalone: true,
@@ -37,11 +38,32 @@ export class CustomAlertComponent {
   }
 
   onConfirm(): void {
-    this.repositoryService.updateEvent({title: this.userInput, start: this.data.event.start, end: this.data.event.end, Identifier: this.data.event.Identifier}).subscribe();
+      this.repositoryService.updateEvent({title: this.userInput, start: this.data.event.start, end: this.data.event.end, Identifier: this.data.event.Identifier}).subscribe();
     // console.log(this.data.userInput);
     // console.log(this.userInput);
     // this.repositoryService.updateEvent({title: 'PP', start: this.data.event.start, end: this.data.event.end, Identifier: this.data.event.Identifier}).subscribe();
     // window.location.reload();
+    alert(this.userInput + ' - Twoja rezerwacja została potwierdzona. Zostało wysłane potwierdzenie SMS o rezerwacji.');
+      console.log("update");
+      this.dialogRef.close(this.userInput);
+  }
+
+  onEdit(): void{
+    this.repositoryService.editEvent({title: this.userInput, start: this.data.event.start, end: this.data.event.end, Identifier: this.data.event.Identifier}).subscribe();
+    console.log(this.data.userInput);
+    console.log(this.userInput);
+    console.log("edit");
+    alert("Rezerwacja została zmieniona. Użytkownik: "+this.userInput+" otrzyma potwiedzenie SMS o wprowadzonej zmianie."); 
     this.dialogRef.close(this.userInput);
   }
+
+  onDelete(): void{
+    this.repositoryService.editEvent({title: 'Wolne', start: this.data.event.start, end: this.data.event.end, Identifier: this.data.event.Identifier}).subscribe();
+    console.log(this.data.userInput);
+    console.log(this.userInput);
+    console.log("delete");
+    alert("Rezerwacja została anulowana. Użytkownik: "+ this.userInput +" otrzyma potwierdzenie SMS o anulowanej rezerwacji.")
+    this.dialogRef.close(this.userInput);
+  }
+
 }

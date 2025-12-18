@@ -14,9 +14,12 @@ export class RepositoryService {
     return this.http.get<any>(this.url)
   }
 
-  deleteEvent(ID: number): Observable<any> { return this.http.delete<any>(this.url, {body: ID})}
+  deleteEvent(event: any): Observable<any> { return this.http.delete<any>(this.url, event)}
 
   updateEvent(event: any): Observable<any> {return this.http.put<any>(this.url, event)}
+
+  editEvent(event: any): Observable<any> {return this.http.patch<any>(this.url, event)}
+
 
   createMockEvents() {
     return this.http.post<any>(this.url + '/mock', {})
